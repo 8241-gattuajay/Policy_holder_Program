@@ -100,4 +100,15 @@ public class PolicyManager {
         System.out.println("Policy with number " + policyNumber + " not found.");
     }
 
+    private static void listPoliciesByType(){
+        System.out.print("Enter Type of Insurance to list (e.g., health, life, auto): ");
+        String typeOfInsurance = sc.nextLine();
+
+        for (int i = 0; i < policyHolderList.size(); i++) {
+            if (policyHolderList.get(i).getTypeofInsurance().equalsIgnoreCase(typeOfInsurance)) {
+                System.out.println(policyHolderList.get(i));
+            }
+        }
+    }
+
 }
