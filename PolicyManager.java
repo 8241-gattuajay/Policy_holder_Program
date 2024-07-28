@@ -55,4 +55,20 @@ public class PolicyManager {
         System.out.println("Policy added successfully.");
     }
 
+    private static void removePolicyByNumber() {
+        System.out.print("Enter Policy Number to remove: ");
+        int policyNumber = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < policyHolderList.size(); i++) {
+            if (policyHolderList.get(i).getPolicyNumber() == policyNumber) {
+                policyHolderList.remove(i);
+                System.out.println("Policy removed successfully.");
+                return;
+            }
+        }
+
+        System.out.println("Policy with number " + policyNumber + " not found.");
+    }
+
 }
