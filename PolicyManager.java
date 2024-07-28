@@ -71,4 +71,33 @@ public class PolicyManager {
         System.out.println("Policy with number " + policyNumber + " not found.");
     }
 
+    private static void updatePolicyDetails(){
+        System.out.print("Enter Policy Number to update: ");
+        int policyNumber = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < policyHolderList.size(); i++) {
+            if (policyHolderList.get(i).getPolicyNumber() == policyNumber) {
+                System.out.print("Enter new Policy Number: ");
+                int newPolicyNumber = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Enter new Policyholder Name: ");
+                String newPolicyholderName = sc.nextLine();
+                System.out.print("Enter new Type of Insurance (e.g., health, life, auto): ");
+                String newTypeOfInsurance = sc.nextLine();
+                System.out.print("Enter new Coverage Amount: ");
+                double newCoverageAmount = sc.nextDouble();
+
+                policyHolderList.get(i).setPolicyNumber(newPolicyNumber);
+                policyHolderList.get(i).setPolicyHolderName(newPolicyholderName);
+                policyHolderList.get(i).setTypeofInsurance(newTypeOfInsurance);
+                policyHolderList.get(i).setCoverageAmount(newCoverageAmount);
+                System.out.println("Policy updated successfully.");
+                return;
+            }
+        }
+
+        System.out.println("Policy with number " + policyNumber + " not found.");
+    }
+
 }
